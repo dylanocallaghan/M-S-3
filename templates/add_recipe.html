@@ -14,7 +14,7 @@
                         <option value="{{ category.course }}">{{ category.course }}</option>
                     {% endfor %}
                 </select>
-                <label for="course">Materialize Select</label>
+                <label for="course">Courses</label>
             </div>
         </div>
         <div class="row">
@@ -34,9 +34,13 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-clock prefix light-blue-text text-darken-4"></i>
-                <textarea id="cooking_time" name="cooking_time" class="materialize-textarea validate"
-                    required></textarea>
-                <label for="cooking_time">How much time will this dish take?</label>
+                <select id="dish_times" name="dish_times" class="validate" required>
+                    <option value="" disabled selected>Length of cooking time</option>
+                    {% for time in times %}
+                        <option value="{{ time.dish_times }}">{{ time.dish_times }}</option>
+                    {% endfor %}
+                </select>
+                <label for="dish_times">How Long Will This Dish Take?</label>
             </div>
         </div>
         <div class="row">
