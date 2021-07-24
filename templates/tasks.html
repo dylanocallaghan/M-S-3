@@ -8,11 +8,12 @@
             <div class="collapsible-header white-text light-blue darken-4 text-shadow">
                 <i class="fas fa-caret-down"></i>
                 <p>
-                    <h1 class="capitalize text-4xl"><strong class="text-5xl">{{ task.recipe_name }} </strong>: {{ task.user }}</h1>
+                    <h1 class="capitalize text-4xl"><strong class="text-5xl">{{ task.recipe_name }} </strong></h1>
                 </p>
             </div>
             <div class="collapsible-body">
-                <p>Method of Cooking: <strong>{{ task.method }}</strong></p>
+                <p>Vegan Friendly: <strong>{{ task.is_vegan }}</strong></p>
+                <p>Course: <strong>{{ task.course }}</strong></p>
                 <p>Ingredients : <strong>{{ task.ingredients }}</strong></p>
                 <p>Length of Cooking : <strong>{{ task.cooking_time }}</strong></p>
                 <p>Directions : <strong>{{ task.directions }}</strong></p>
