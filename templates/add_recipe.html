@@ -7,6 +7,18 @@
     <form class="col s12" method="POST" action="">
         <div class="row">
             <div class="input-field col s12">
+                <i class="fas fa-utensils prefix light-blue-text text-darken-4"></i>
+                <select id="course" name="course" class="validate" required>
+                    <option value="" disabled selected>Choose Course Option</option>
+                    {% for category in categories %}
+                        <option value="{{ category.course }}">{{ category.course }}</option>
+                    {% endfor %}
+                </select>
+                <label for="course">Materialize Select</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
                 <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
                 <input id="recipe_name" name="recipe_name" maxlength="30" type="text" class="validate" required>
                 <label for="recipe_name">Recipe Name</label>
@@ -22,8 +34,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-clock prefix light-blue-text text-darken-4"></i>
-                <textarea id="cooking_time" name="cooking_time"
-                    class="materialize-textarea validate" required></textarea>
+                <textarea id="cooking_time" name="cooking_time" class="materialize-textarea validate"
+                    required></textarea>
                 <label for="cooking_time">How much time will this dish take?</label>
             </div>
         </div>
