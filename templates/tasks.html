@@ -1,25 +1,29 @@
-  
-{% extends "base.html" %}
-{% block content%}
+  {% extends "base.html" %}
+  {% block content%}
 
-    <ul class="collapsible">
-        {% for task in tasks %}
-        <li>
-            <div class="collapsible-header white-text light-blue darken-4 text-shadow">
-                <i class="fas fa-caret-down"></i>
-                <p>
-                    <h1 class="capitalize text-4xl"><strong class="text-5xl">{{ task.recipe_name }} </strong></h1>
-                </p>
-            </div>
-            <div class="collapsible-body">
-                <p>Vegan Friendly: <strong>{{ task.is_vegan }}</strong></p>
-                <p>Course: <strong>{{ task.course }}</strong></p>
-                <p>Ingredients : <strong>{{ task.ingredients }}</strong></p>
-                <p>Length of Cooking : <strong>{{ task.cooking_time }}</strong></p>
-                <p>Directions : <strong>{{ task.directions }}</strong></p>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
+  <h1 class="light-blue-text text-darken-4 text-center text-6xl p-4">All Recipes</h1>
 
-    {% endblock %}
+  <ul class="collapsible">
+      {% for task in tasks %}
+      <li>
+          <div class="collapsible-header white-text light-blue darken-4 text-shadow">
+              <i class="fas fa-caret-down"></i>
+              <strong>{{ task.recipe_name }}</strong> : {{ task.created_by }}
+              {% if task.is_vegan == "on" %}
+              <i class="fas fa-exclamation-circle light-blue-text text-lighten-2 tooltipped" data-position="right"
+                  data-tooltip="VEGAN!"></i>
+              {% endif %}
+          </div>
+          <div class="collapsible-body">
+              <p class="capitalize"><strong>Friendly: </strong>{{ task.is_vegan }}</strong></p>
+              <p class="capitalize"><strong>Course: </strong>{{ task.course }}</strong></p>
+              <p class="capitalize"><strong>Ingredients : </strong>{{ task.ingredients }}</strong></p>
+              <p class="capitalize"><strong>Length of Cooking : </strong>{{ task.dish_times }}</strong></p>
+              <p class="capitalize"><strong>Directions : </strong>{{ task.directions }}</strong></p>
+              <p><em><strong class="capitalize">by</strong> {{ task.created_by }}</em></p>
+          </div>
+      </li>
+      {% endfor %}
+  </ul>
+
+  {% endblock %}
