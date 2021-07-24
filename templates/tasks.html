@@ -2,29 +2,23 @@
 {% extends "base.html" %}
 {% block content%}
 
-
-    {% for task in tasks %}
-        {{ task.recipe_name }}<br>
-        {{ task.user }}<br>
-        {{ task.ingredients }}<br>
-        {{ task.method }}<br>
-        {{ task.short_description }}<br>
-        {{ task.image_url }}<br>
-    {% endfor %}
-
     <ul class="collapsible">
+        {% for task in tasks %}
         <li>
-            <div class="collapsible-header white-text light-blue darken-4 text-shadow"><i class="fas fa-caret-down"></i>First</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            <div class="collapsible-header white-text light-blue darken-4 text-shadow">
+                <i class="fas fa-caret-down"></i>
+                <p>
+                    <h1 class="capitalize text-4xl"><strong class="text-5xl">{{ task.recipe_name }} </strong>: {{ task.user }}</h1>
+                </p>
+            </div>
+            <div class="collapsible-body">
+                <p>Method of Cooking: <strong>{{ task.method }}</strong></p>
+                <p>Ingredients : <strong>{{ task.ingredients }}</strong></p>
+                <p>Length of Cooking : <strong>{{ task.cooking_time }}</strong></p>
+                <p>Directions : <strong>{{ task.directions }}</strong></p>
+            </div>
         </li>
-        <li>
-            <div class="collapsible-header white-text light-blue darken-4 text-shadow"><i class="fas fa-caret-down"></i>Second</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-            <div class="collapsible-header white-text light-blue darken-4 text-shadow"><i class="fas fa-caret-down"></i>Third</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
+        {% endfor %}
     </ul>
 
-{% endblock %}
+    {% endblock %}
