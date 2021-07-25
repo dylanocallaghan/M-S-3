@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="light-blue-text text-darken-4 text-center text-6xl p-4">Add Recipe</h1>
+<h1 class="red-text text-darken-4 text-center text-6xl p-4">Add Recipe</h1>
 
 <div class="row card-panel grey lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-utensils prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-utensils prefix red-text text-darken-4"></i>
                 <select id="course" name="course" class="validate" required>
                     <option value="" disabled selected>Choose Course Option</option>
                     {% for category in categories %}
@@ -19,21 +19,22 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-pencil-alt prefix red-text text-darken-4"></i>
                 <input id="recipe_name" name="recipe_name" maxlength="30" type="text" class="validate" required>
                 <label for="recipe_name">Recipe Name</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-list prefix light-blue-text text-darken-4"></i>
-                <input id="ingredients" name="ingredients" minlength="5" type="text" class="validate" required>
+                <i class="fas fa-list prefix red-text text-darken-4"></i>
+                <textarea id="ingredients" name="ingredients"
+                    class="materialize-textarea validate" required></textarea>
                 <label for="ingredients">Ingredients</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-clock prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-clock prefix red-text text-darken-4"></i>
                 <select id="dish_times" name="dish_times" class="validate" required>
                     <option value="" disabled selected>Length of cooking time</option>
                     {% for time in times %}
@@ -45,16 +46,16 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-align-left prefix red-text text-darken-4"></i>
                 <textarea id="directions" name="directions"
                     class="materialize-textarea validate" required></textarea>
-                <label for="directions">Describle how to cook the dish</label>
+                <label for="directions">How to cook the dish</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <div class="switch">
-                    <i class="fas fa-exclamation-circle prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-exclamation-circle prefix red-text text-darken-4"></i>
                     <label for="is_vegan">
                         <input type="checkbox" id="is_vegan" name="is_vegan">
                         <span class="lever"></span>
@@ -65,7 +66,7 @@
         </div>
         <div class="row">
             <div class="col s12 center-align">
-                <button class="btn waves-effect waves-light light-blue" type="submit">Add Recipe
+                <button class="btn waves-effect waves-light red" type="submit">Add Recipe
                     <i class="fas fa-plus-square right"></i>
                   </button>
             </div>
