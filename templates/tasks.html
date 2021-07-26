@@ -6,14 +6,20 @@
   <ul class="collapsible">
       {% for task in tasks %}
       <li>
-          <div class="collapsible-header white-text red darken-4 text-shadow">
-              <i class="fas fa-caret-down"></i>
-              <strong>{{ task.recipe_name }}</strong> : {{ task.created_by }}
-              {% if task.is_vegan == "on" %}
-              <i class="fas fa-exclamation-circle red-text text-lighten-2 tooltipped" data-position="right"
-                  data-tooltip="VEGAN!"></i>
-              {% endif %}
-          </div>
+        <div class="collapsible-header white-text red darken-4 text-shadow">
+            <div class="col s3">
+                <i class="fas fa-caret-down"></i>
+                <a href="" class="btn-small green accent-4">Done</a>
+                <a href="" class="btn-small blue lighten-1">Edit</a>
+            </div>
+            <div class="col s9">
+                <strong>{{ task.recipe_name }}</strong> : {{ task.user }}
+                {% if task.is_vegan == "on" %}
+                    <i class="fas fa-exclamation-circle red-text text-lighten-2 tooltipped"
+                        data-position="right" data-tooltip="VEGAN!"></i>
+                {% endif %}
+            </div>
+        </div>
           <div class="collapsible-body">
               <p class="capitalize"><strong>Vegan: </strong>{{ task.is_vegan }}</strong></p>
               <p class="capitalize"><strong>Course: </strong>{{ task.course }}</strong></p>
