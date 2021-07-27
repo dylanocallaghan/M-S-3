@@ -135,6 +135,14 @@ def edit_task(task_id):
     times = mongo.db.times.find()
     return render_template("edit_task.html", task=task, categories=categories, times=times)
 
+
+@app.route("/delete_task/<task_id>")
+def delete_task(task_id):
+    mongo.db.tasks.remove({"_id": ObjectId(task_id)})
+    flash("Recipe Successfully Deleted")
+    return redirect(url_for("get_tasks"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
