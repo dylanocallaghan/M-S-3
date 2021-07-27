@@ -1,7 +1,7 @@
   {% extends "base.html" %}
   {% block content%}
 
-  <h1 class="red-text text-darken-4 text-center text-6xl p-4">All Recipes</h1>
+  <h1 class="white-text text-center text-6xl p-4">All Recipes</h1>
 
   <div class="row card-panel grey lighten-5">
     <form action="{{ url_for('search') }}" method="post" class="col s12">
@@ -53,7 +53,7 @@
       {% endfor %}
   </ul>
 {% else %}
-        <h3 class="red-text text-darken-4 center-align">No Results Found</h3>
+        <h3 class="white-text text-darken-4 center-align">No Results Found</h3>
 {% endif %}
 
   {% endblock %}

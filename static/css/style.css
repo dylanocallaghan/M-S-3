@@ -15,6 +15,19 @@
     line-height: 42px;
 }
 
+body{
+    background-image: url(../images/backgroundimage.jpg);
+}
+
+.collapsible{
+    background-color: #fafafa;
+}
+
+.deeper {
+    font-weight: 900;
+    font-size: x-large;
+}
+
 @media only screen and (max-width: 1000px){
     .logo{
         font-size: medium;

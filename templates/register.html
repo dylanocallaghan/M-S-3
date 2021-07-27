@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Register</h3>
+    <h3 class="white-text center-align">Register</h3>
 
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
@@ -36,9 +36,9 @@
 
     <div class="row">
         <div class="col s12">
-            <p class="center-align">
+            <p class="green-text center-align deeper">
                 Already Registered?
-                <a href="{{ url_for('login') }}" class="red-text text-darken-4">Log In</a>
+                <a href="{{ url_for('login') }}" class="green-text">Log In</a>
             </p>
         </div>
     </div>
