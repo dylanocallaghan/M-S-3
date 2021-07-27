@@ -106,7 +106,7 @@ def add_recipe():
             "created_by": session["user"]
         }
         mongo.db.tasks.insert_one(task)
-        flash("Task Successfully Added")
+        flash("Recipe Successfully Added")
         return redirect(url_for("get_tasks"))
 
     categories = mongo.db.categories.find()
@@ -116,6 +116,20 @@ def add_recipe():
 
 @app.route("/edit_task/<task_id>", methods=["GET", "POST"])
 def edit_task(task_id):
+    if request.method == "POST":
+        is_vegan = "on" if request.form.get("is_vegan") else "off"
+        submit = {
+            "course": request.form.get("course"),
+            "recipe_name": request.form.get("recipe_name"),
+            "ingredients": request.form.get("ingredients"),
+            "directions": request.form.get("directions"),
+            "dish_times": request.form.get("dish_times"),
+            "is_vegan": is_vegan,
+            "created_by": session["user"]
+        }
+        mongo.db.tasks.update({"_id": ObjectId(task_id)}, submit)
+        flash("Recipe Successfully Updated")
+
     task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
     categories = mongo.db.categories.find()
     times = mongo.db.times.find()
