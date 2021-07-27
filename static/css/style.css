@@ -32,4 +32,13 @@ body{
     .logo{
         font-size: medium;
     }
+    .input-field.col .prefix ~ label, .input-field.col .prefix ~ .validate ~ label {
+        width: calc(100%);
+    }
+    .deepen{
+        margin-top: 1rem;
+    }
+    body{
+        width: 100%;
+    }
 }
