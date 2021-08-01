@@ -44,7 +44,7 @@
               </div>
           </div>
           <div class="collapsible-body">
-              <p class="show">
+              <p class="appear">
                   {% if session.user|lower == recipe.created_by|lower %}
                   <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
                       class="btn-small green accent-4">Remove</a>
@@ -57,7 +57,7 @@
               <p class="capitalize"><strong>Length of Cooking : </strong>{{ recipe.dish_times }}</strong></p>
               <p class="capitalize"><strong>Directions : </strong>{{ recipe.directions }}</strong></p>
               <p><em><strong class="capitalize">by</strong> {{ recipe.created_by }}</em></p>
-              <p class="show">
+              <p class="appear">
                   {% if session.user|lower == recipe.created_by|lower %}
                   <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
                       class="btn-small green accent-4">Remove</a>
