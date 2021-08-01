@@ -41,4 +41,7 @@ body{
     body{
         width: 100%;
     }
+    .hidden{
+        display: none;
+    }
 }

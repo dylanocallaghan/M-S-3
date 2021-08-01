@@ -19,17 +19,17 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_tasks")
-def get_tasks():
-    tasks = list(mongo.db.tasks.find())
-    return render_template("tasks.html", tasks=tasks)
+@app.route("/get_recipes")
+def get_recipes():
+    recipes = list(mongo.db.recipes.find())
+    return render_template("recipes.html", recipes=recipes)
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    tasks = list(mongo.db.tasks.find({"$text": {"$search": query}}))
-    return render_template("tasks.html", tasks=tasks)
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("recipes.html", recipes=recipes)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -103,7 +103,7 @@ def logout():
 def add_recipe():
     if request.method == "POST":
         is_vegan = "on" if request.form.get("is_vegan") else "off"
-        task = {
+        recipe = {
             "course": request.form.get("course"),
             "recipe_name": request.form.get("recipe_name"),
             "ingredients": request.form.get("ingredients"),
@@ -112,17 +112,17 @@ def add_recipe():
             "is_vegan": is_vegan,
             "created_by": session["user"]
         }
-        mongo.db.tasks.insert_one(task)
+        mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
-        return redirect(url_for("get_tasks"))
+        return redirect(url_for("get_recipes"))
 
     categories = mongo.db.categories.find()
     times = mongo.db.times.find()
     return render_template("add_recipe.html", categories=categories, times=times)
 
 
-@app.route("/edit_task/<task_id>", methods=["GET", "POST"])
-def edit_task(task_id):
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
     if request.method == "POST":
         is_vegan = "on" if request.form.get("is_vegan") else "off"
         submit = {
@@ -134,20 +134,20 @@ def edit_task(task_id):
             "is_vegan": is_vegan,
             "created_by": session["user"]
         }
-        mongo.db.tasks.update({"_id": ObjectId(task_id)}, submit)
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")
 
-    task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find()
     times = mongo.db.times.find()
-    return render_template("edit_task.html", task=task, categories=categories, times=times)
+    return render_template("edit_recipe.html", recipe=recipe, categories=categories, times=times)
 
 
-@app.route("/delete_task/<task_id>")
-def delete_task(task_id):
-    mongo.db.tasks.remove({"_id": ObjectId(task_id)})
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
-    return redirect(url_for("get_tasks"))
+    return redirect(url_for("get_recipes"))
 
 
 if __name__ == "__main__":

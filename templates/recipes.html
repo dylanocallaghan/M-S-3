@@ -12,7 +12,7 @@
                 <label for="query">Search Recipes</label>
             </div>
             <div class="col s12 m4">
-                <a href="{{ url_for('get_tasks') }}" class="red btn text-shadow deepen">Reset</a>
+                <a href="{{ url_for('get_recipes') }}" class="red btn text-shadow deepen">Reset</a>
                 <button type="submit" class="green darken-1 btn text-shadow deepen">
                     <i class="fas fa-search left"></i> Search
                 </button>
@@ -21,33 +21,33 @@
     </form>
 </div>
 
-{% if tasks|length > 0 %}
+{% if recipes|length > 0 %}
   <ul class="collapsible">
-      {% for task in tasks %}
+      {% for recipe in recipes %}
       <li>
         <div class="collapsible-header white-text red darken-4 text-shadow">
             <div class="col s3">
                 <i class="fas fa-caret-down"></i>
-                {% if session.user|lower == task.created_by|lower %}
-                    <a href="{{ url_for('delete_task', task_id=task._id) }}" class="btn-small green accent-4">Remove</a>
-                    <a href="{{ url_for('edit_task', task_id=task._id) }}" class="btn-small red lighten-1">Edit</a>
+                {% if session.user|lower == recipe.created_by|lower %}
+                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small green accent-4 hidden">Remove</a>
+                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small red lighten-1 hidden">Edit</a>
                 {% endif %}
             </div>
             <div class="col s9">
-                <strong>{{ task.recipe_name }}</strong>
-                {% if task.is_vegan == "on" %}
+                <strong>{{ recipe.recipe_name }}</strong>
+                {% if recipe.is_vegan == "on" %}
                     <i class="fas fa-exclamation-circle red-text text-lighten-2 tooltipped"
                         data-position="right" data-tooltip="VEGAN!"></i>
                 {% endif %}
             </div>
         </div>
           <div class="collapsible-body">
-              <p class="capitalize"><strong>Vegan: </strong>{{ task.is_vegan }}</strong></p>
-              <p class="capitalize"><strong>Course: </strong>{{ task.course }}</strong></p>
-              <p class="capitalize"><strong>Ingredients : </strong>{{ task.ingredients }}</strong></p>
-              <p class="capitalize"><strong>Length of Cooking : </strong>{{ task.dish_times }}</strong></p>
-              <p class="capitalize"><strong>Directions : </strong>{{ task.directions }}</strong></p>
-              <p><em><strong class="capitalize">by</strong> {{ task.created_by }}</em></p>
+              <p class="capitalize"><strong>Vegan: </strong>{{ recipe.is_vegan }}</strong></p>
+              <p class="capitalize"><strong>Course: </strong>{{ recipe.course }}</strong></p>
+              <p class="capitalize"><strong>Ingredients : </strong>{{ recipe.ingredients }}</strong></p>
+              <p class="capitalize"><strong>Length of Cooking : </strong>{{ recipe.dish_times }}</strong></p>
+              <p class="capitalize"><strong>Directions : </strong>{{ recipe.directions }}</strong></p>
+              <p><em><strong class="capitalize">by</strong> {{ recipe.created_by }}</em></p>
           </div>
       </li>
       {% endfor %}
