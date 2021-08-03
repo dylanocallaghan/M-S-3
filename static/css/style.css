@@ -28,6 +28,10 @@ body{
     font-size: x-large;
 }
 
+.capitalize{
+    text-transform: capitalize;
+}
+
 @media only screen and (max-width: 1000px){
     .logo{
         font-size: medium;
