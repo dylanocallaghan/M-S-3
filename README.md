@@ -57,10 +57,10 @@ This website was created for people who like to easily access and reproduce 
 * As a user, I want the main purpose of the site to be immediately evident when I enter the site so that I understand its aim from the offset.
 * As a user I want to easily navigate the site so that I can find content quickly.
 * As a user, I want the website to be responsive so that I can clearly view the webpages from my mobile device, tablet or desktop.
-* As a user, I want to be able to save my favourite recipe so that I can return and access it again.
 * As a user, I want to be able to register to the website so that I can create and manage my own  cookbook.
+* As a user, I want to be able to save my favourite recipe so that I can return and access it again.
 * As a user, I want to be able to return to previous recipes that I have uploaded and edit them.
-* As a user, I want to be able to search or filter recipes based on custom criteria for example, if I need a vegan meal, etc.
+* As a user, I want to be able to search recipes based on custom criteria, for example, if I need to find a vegan meal, etc.
 * As a user, I want to be able to return to the main site without having to use the browser button.
 
 ### **The Scope Plane**
@@ -107,98 +107,73 @@ The following navigation items will be implemented:
 
 User Story:
 > As a user, I want the website to be responsive so that I can clearly view the webpages from my mobile device, tablet or desktop.
+
 Acceptance Criteria:
 * Content should be responsive and display clearly on all devices with no horizontal scroll.
 Implementation:
+
 Materialize will be used for website layout with suitable column sizes and containers to ensure that all content is displayed clearly on all devices.
 
 User Story:
-> As a user, I want to be able to register to the website so that I can create and manage my own events.
+> As a user, I want to be able to register to the website so that I can create and manage my own  cookbook.
 
 Acceptance Criteria:
 * Sign up - Login and Logout functionality to be added.
-* User must have the ability to create, update and delete their own events.
-* User must have a profile page displaying their basic details and events they have created.
-* Only the creator of the events should have the ability to update or delete the events.
+* User must have the ability to create, update and delete their own recipes.
+* Only the creator of the recipes should have the ability to update or delete their recipes.
 
 Implementation:
 
-A Sign Up page will be implemented that allows users to register for an account on the website. The username
-and password along with basic details for the users account will be stored in a MongoDB database collection 
-called users. In order to create or modify events, a user will have to register and login to the website. 
-Only the creator of the event will have the ability to update or delete the event, this is to prevent 
-unwanted modification or deletion of events by other users. A flash message will be shown to the user to 
-alert them whether the update or delete on their event was successful or failed.
+* A Sign Up page will be implemented that allows users to register for an account on the website. 
+*The username will be stored in a MongoDB database collection called users. In order to create and modify recipes, a user will have to register and login to the website. 
+Only the creator of the recipe will have the ability to update or delete the recipe. This will prevent unwanted modification or deletion of recipes by other users. A flash message will be shown to the user to alert them whether the edit was successful.
 
-A Sign In page will be implemented to allow registered users the ability to login in to their account. 
+* A Log In page will be implemented to allow registered users the ability to sign in to their account. 
 
-Once a user has successfully logged in, they will be redirected to their profile page. The users basic 
-details will be displayed on their profile, along with any events they have created. The user will be able 
-to update or delete their events from the profile page. This page will only be available to logged in users,
-this includes the visibility of the navigation menu item.
+* Once a user has successfully logged in, they will be able to access previously uploaded recipes and edit/remove them. They will also be able to create new recipes. A Create Recipe page will be implemented that will be accessible and visible on the navigation menu to users that are signed in. The user will be able to create a recipe from this page. The recipe information will be stored in a MongoDB database collection called recipes and the recipe categories will be stored in a MongoDB collection called categories.
 
-A Sign Out button will be displayed to users who are logged in. When clicked this will sign the user out of the 
-website and redirect them to the home page.
-
-A Create Event page will be implemented that will be acessible and visible on the navigation menu to logged 
-in users. The user will be able to create an event from this page. The event information will be stored in 
-a MongoDB database collection called events and the event categories will be stored in a MongoDB collection 
-called categories.
+* A Log Out button will be displayed to users who are logged in. When clicked this will sign the user out of the website and redirect them to the Log In page.
 
 User Story:
-> As a user, I want to be able to search or filter events based on custom criteria so that I can find events
- suited to me.
-
-Acceptance Criteria:
-* Events must be displayed to all users regardless of being logged in.
-* Users should be able to search for events by Date, Location or Event Type.
+> As a user, I want to be able to save my favourite recipe so that I can return and access it again.
+Acceptance Criteria:
+* User account functionality enables recipes that were created by user to be stored on the homepage.
 
 Implementation:
-
-An Events page will be implemented that is displayed to all users that is accessible to logged in or guests. 
-This page will display the next six motorbike events from today's date on a materialize collapsible element. In order to 
-make use of space, these events will be collapsable and can be expanded to view details on click.
-
-A search box will be displayed on screen which will allow users to search for events based on Date, Event 
-Type or Location. This will return a filtered, full list events for the current search criteria. 
-This will be implemented by using a database index that will be created on the MongoDB collection events.
+* User can log in and out of their account to view recipes that they previously created. Recipe details are stored in MongoDB database collection called recipes and the recipe categories will be stored in a MongoDB collection called categories.
 
 User Story:
-> As a user, I want a way to contact the site owner so that I can have any questions I may have in 
-regards to the website answered and receive feedback to alert on status of form submission.
+> As a user, I want to be able to return to previous recipes that I have uploaded and edit them.
 
-Acceptance Criteria:
-* Contact page should be added with a contact form. This form should only submit with valid data input.
-* Contact form should not submit with invalid data input.
-* User should be alerted of success/failure status of form submission.
+Acceptance Criteria:
+* User will be able to delete and edit their recipes when logged in.
 
 Implementation:
-
-A contact page will be added that contains a materialize form, this will allow users to contact the site 
-owner. The EmailJS API will be used in order to implement this feature and a flash message will be 
-displayed to alert the user if the contact form submitted successfully or unsuccessfully.
-
-Validation will be performed on the form to ensure valid data input. The form will not submit if any 
-field is blank.
-
-Form Fields:
-* Name - Type: Text, required.
-* Email - Type: Email, required.
-* Comments - Type: TextArea, required.
+* When user is logged in to their account, an edit and delete button will appear on the recipes that they uploaded.
 
 User Story:
-> As a user, I want to be able to return to the main site without having to use the browser buttons so 
-that I can easily return to the website if I navigate to a page that doesn't exist.
+> As a user, I want to be able to search recipes based on custom criteria, for example, if I need to find a vegan meal, etc.
 
 Acceptance Criteria:
-* If a user redirects to the wrong page, an error will display that contains a link to go back to the main 
-website.
+* Recipes must be displayed to all users regardless of user status - logged in or logged out.
+* Users should be able to search for recipes by name or ingredients.
 
 Implementation:
 
-A custom 404 page will be created so that if a user attempts to nagiate to a page that it not found, an 
-error will be displayed. This page will contain a clickable anchor link to allow the user to redirect to 
-the main website without needing to use the browser navigation buttons.
+* A homepage will be implemented that is displayed to all users and is accessible to both logged in users or guests. 
+
+* This page will display all available recipes in a materialize collapsible element. These recipes are collapsible and can be expanded to view details on click, this saves space on the page.
+
+* A search box will be displayed on screen which will allow users to search for recipes based on ingredients and name. This will return a filtered, full list of recipes for the current search criteria. This will be implemented using a database index that will be created on the MongoDB collection recipes.
+
+User Story:
+> As a user, I want to be able to return to the main site without having to use the browser button.
+
+Acceptance Criteria:
+* Clicking the Logo or 'All Recipes' button on the Navigation Bar will return the User to the homepage. 
+
+Implementation:
+The logo and 'All Recipes' button will contain a clickable anchor link to allow the user to redirect to the main website without needing to use the browser navigation buttons.
 
 ### **The Skeleton Plane**
 #### Wireframes
@@ -242,26 +217,41 @@ MongoDB Object format examples:
 **Collection: categories**<br>
 {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;_id: unique-value,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;event_type: "Rally"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;course: "Starter"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;course: "Main"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;course: "Dessert"<br>
 }
 
-**Collection: events**<br>
+**Collection: Recipes**<br>
 {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;_id: unique-value,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;event_type: "Rally",<br>
-&nbsp;&nbsp;&nbsp;&nbsp;location : "Wexford",<br>
-&nbsp;&nbsp;&nbsp;&nbsp;date : "09 February, 2021",<br>
-&nbsp;&nbsp;&nbsp;&nbsp;description : "This Rally is hosted by Unicorn MCC.",<br>
-&nbsp;&nbsp;&nbsp;&nbsp;organiser : "Daisy McGirr"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;recipe_name: "Vegan Fruity Curry",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ingredients : " 2 Peppers 
+ 2 Red Onions,
+ 1 Bramley Apple,
+ 3 Sticks of Celery,
+ 1 Tin of Chopped Tomatoes,
+ To Make the Sauce:
+ 1 Tbl. Spoon Oil,
+ Tbl. spoon Flour,
+ Tin of Coconut Milk,
+ 2 Tsp of Curry Powder.",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;directions : "STEP 1
+Make a roux with flour and oil - add coconut milk and curry powder for sauce.
+STEP 2
+Chop all of the ingredients and slowly add to a separate saucepan start with onions and peppers and lightly cook off, add celery and apple next and finally add a tin of tomatoes.
+STEP 3
+Allow vegetables to simmer for 15 mins before adding to the sauce.",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dish_times : "about 45 minutes",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;is_vegan : "on"<br>
 &nbsp;&nbsp;&nbsp;&nbsp;created_by : session[user]<br>
 }
 
 **Collection: users**<br>
 {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;_id: unique-value,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;username: "Admin",<br>
-&nbsp;&nbsp;&nbsp;&nbsp;password : "12a6yt&jddn",<br>
-&nbsp;&nbsp;&nbsp;&nbsp;name : "Jane Doe",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;username: "dylan",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;password: "unique-value",<br>
 }
 
 #### Security
@@ -275,73 +265,39 @@ users. In production these are stored in Heroku.
 ### Design
 
 #### Colour Scheme
-The main background colour is a cream ![#d2d2af](readme_images/cream.png) for the header, footer
-and form button backgrounds. 
+The main background colour is a background image for the general background with a red header on all pages of the website. 
 
-The main website text is black ![#000000](readme_images/black.png)
-
-All custom heading text is a deep shade of red ![#831717](readme_images/red.png)
+The main website text is white, a secondary text colour of green appears throughout the website.
 
 #### Typography
-The main heading on all pages and in the expanded materialize collapsible element headings use the 'PT Serif' font while the 
-rest of the websites content uses the 'Play' font.
+The main heading on all pages, the expanded materialize collapsible element headings and all other text throughout use the 'Times' font.
 
 #### Imagery
-A background image will be used on all pages displaying a map of Ireland, this image was 
-taken from [mapswire](https://mapswire.com/countries/ireland/). 
+A background image will be used on all pages displaying a classic Irish breakfast, this image was 
+taken from Google images. 
 
-The website logo was created using online software from the website [Canva](https://www.canva.com/).
-
-The home page image of the bride and motorbike burnouts is property of Debbie Harkin. - Permission was granted 
-to use the image.
-
-The second home page image of the three biker meet is property of Connor Meehan. - Permission to use this was given.
-
-## Differences to Design
-After meeting with the client, Gareth G half way through the project, some of the Design was changed as it did not 
-meet expectations. The colour scheme for the Website and fonts were changed as per the clients request.
-
-In the original wireframes the Logo was centered and nav items split to the left and right side. This design did 
-not look well on the page, it left too much white space, nav items were too spaced on extra large screens and upon 
-reading about UX Design standards or navigations, it did not really confirm to norms or user friendly design. The design 
-was then changed to have a banner with a large logo across the top of the page, with the navigation items sat underneath.
-
-Original design and wireframes had the drop down input used to search events as a dual box that could search by either 
-location or event_type. This proved difficult to implement and was agreed upon with the client to add an additional date 
-picker search field.<br>
-Search fields were also changed to be single column fields. The reasoning for this was reading this 
-[article](https://cxl.com/blog/form-design-best-practices/) on form best practices.
-
-Changes in design from the original wireframes can be found in the Skeleton Wireframes section as both final and original 
-wireframes are linked.
-
-Additional verification was addd to the event deletion button to take user confirmation they want to delete the event. 
-This was added so the user doesn't accidentally delete an event and was implemented using a modal with the option to 
-cancel or delete.
-
-500 Error page was not included in the original design but was implemented with the same page layout as the 404 page 
-to account for any internal server errors.
-****
 ## Features
 
 ### Existing Features
 
-* Home page displaying images and information on the sites purpose.
+* Home page displaying recipes created by users.
 * User sign up functionality.
 * Sign in / Sign out functionality.
-* Event page that displays the next six events from todays date and allows users to search for events.
-* Create event page allowing signed in users to create events.
-* Profile page showing basic user information and events created by the user with modification ability.
-* Contact page with form and EmailJS functionality to contact site owner.
+* Search engine that enables users to search for recipes using recipe names and ingredients.
+* Create recipe page allowing signed in users to create recipes.
+* Modification ability for signed in users on existing recipes created by them. 
 * Mobile responsive design.
-* Site wide footer containing contact information, Copyright info and Site Links.
 
 ### Features Left to Implement
 
-A feature to be included in the next release will allow users the ability to upload their own custom event posters. 
-These will be displayed in the materialize collapsible elements along with the event information.
+A  feature to be included in the next release will allow users to upload images of the dishes they create. These will be displayed in the materialize collapsible elements along with the event information.
 
 Admin login will be implemented in the next release to allow admin users to delete any events that may be inappropriate.
+
+A feature to be included in the next release is a 'Gluten Free' tag similar to the 'Vegan' tag already featured. 
+
+Another feature that will be included in the next release will allow users to search for recipes by category (starter, main, etc) and by cooking time.
+
 ****
 ## Technologies
 * [HTML](https://en.wikipedia.org/wiki/HTML)
@@ -417,18 +373,14 @@ Python Code must pass through [PEP8 Validator](http://pep8online.com/)
 
 #### **Access Requirements**
 Tester must have access to MongoDB in order to manually verify the insertion 
-of records to users and events collections.
+of records to users and recipe collections.
 
 #### **Regression Testing**
-All features previous tested during development in a local environment must be regression 
+All features previously tested during development in a local environment must be regression 
 tested in production on the live website.
 
 #### **Assumptions and Dependencies**
 Testing is dependent on the website being deployed live on Heroku.
-
-#### **Out of Scope**
-Only test cases listed under High Level Test Cases will be performed as part of this 
-testing effort.
 
 ### Test Results
 
@@ -441,8 +393,7 @@ Full test results can be found [here](TESTING.md)
 To create this project I used the CI Gitpod Full Template by navigating 
 [here](https://github.com/Code-Institute-Org/gitpod-full-template) and clicking the 'Use this template' button.
 
-I was then directed to the create new repository from template page and entered in my desired repo name, then 
-clicked Create repository from template button.
+I was then directed to the create new repository from template page and entered in my desired repo name, then clicked create repository from template button.
 
 Once created, I navigated to my new repository on GitHub and clicked the Gitpod button which built my workspace.
 
@@ -492,7 +443,7 @@ Click the settings tab and then click the Reveal Config Vars button and add the 
 MONGO_URI, MONGO_DBNAME and SECRET_KEY. You must have the connection details in order to do this. These details are private and not disclosed in this repository 
 for security purposes.**
 
-1. Navigate to the GitHub [Repository](https://github.com/Daisy-McG/Motorbike-Event-Finder).
+1. Navigate to the GitHub [Repository](https://github.com/dylanocallaghan/M-S-3).
 1. Click the Code drop down menu.
 1. Either Download the ZIP file, unpackage locally and open with IDE (This route ends here) OR Copy Git URL from the HTTPS dialogue box.
 1. Open your developement editor of choice and open a terminal window in a directory of your choice.
@@ -502,47 +453,23 @@ for security purposes.**
 Once the project has been loaded into an IDE of choice, run the following command in the shell to install all the required packages:
 > pip install -r requirements.txt
 
-### Fork Project 
-
-Most commonly, forks are used to either propose changes to someone else's project or to use someone else's project as a starting point 
-for your own idea. - Definition from [Github Docs](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo).
-
-1. Navigate to the GitHub Repository you want to fork.
-1. On the top right of the page under the header, click the fork button.
-    
-    ![Fork](readme_images/fork.JPG)
-1. This will create a duplicate of the full project in your GitHub Repository.
-
 ****
 ## Credits
 
-Background image - Taken from [mapswire](https://mapswire.com/countries/ireland/). 
-
-Website Logo - Created with [Canva](https://www.canva.com/).
+Background image - Taken from (https://money.yahoo.com/best-traditional-irish-food-st-210000643.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAIrM8eOnb7b09prBE_p6ZMu8Jsg5Gf-OF7pCZgAADbByEIhOxxOfBdirdL3OL1MZdnHMzLIfAExrOi3KxAuCsA-z86sYuAVw0vp_U2wIunlQHk9-tCv3OS4TFGyHgsujGnK2ZJhzQ9PBB5NbCvMrTWksBn0KC086WrIfu4YMIQsB) 
 
 ### Code
 
-[Stack Overflow](https://stackoverflow.com/questions/35843675/link-to-a-specific-location-in-a-flask-template) - The code used to navigate 
-to a specific section of a page using Flask templates was taken from here.
+[Code institute](https://learn.codeinstitute.net/ci_program/diplomainsoftwaredevelopment) - The code used to create the website back-end fuctions was derived from previous projects done in the software development course from Code Institute.
 
-[Stack overflow](https://stackoverflow.com/questions/5272433/html5-form-required-attribute-set-custom-validation-message) - The code used to 
-create custom error messages on invalid form inputs was copied and modified from this stack overflow post.
+[Materialize](https://materializecss.com/) - Materialize was used to make the nav bar and header for the website.
 
-[Stack overflow](https://stackoverflow.com/questions/38964113/how-can-i-create-a-navbar-with-center-aligned-links-using-materialize) - The CSS 
-used to center the nav bar was gotten from this stack overflow post. 
-
-[W3Schools](https://www.w3schools.com/tags/tag_figcaption.asp) - The figure and caption code on the home page images was done by following 
-a W3Schools tutorial.
-
-JavaScript Validation function in scripts.js was code from course material for Task Manager App on the LMS. 
+JavaScript Validation function in scripts.js was code from course material for Task Manager App. 
 
 ### Acknowledgements
 
 I'd like to give special thanks to the the following people for their help with my project:
-* Slack user Seán for providing me information on how to implement 404 and 500 page routing with flask and helping me debug why 
-the Manage Events title was showing when the user had no events. Also for the help with my delete unit test.
-* Slack user Anthony for his help with my error/message Flash messages.
-* Slack user Bim for his help with good UX Design practices and showing articles referencing these.
-* My mentor Spencer Baribell for his guidance throughout the project.
+* Helpful lack users who responded to any queries that I had throughout the project and helped resolve errors, e.g. issues implementing the collapsible menu from materialize.
+* My mentor Spencer for reviewing my project and confirming he was happy with my work.
 
 ****
