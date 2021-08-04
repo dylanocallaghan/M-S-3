@@ -1,7 +1,7 @@
 # Recipe Swap
 The Recipe Swap app allows the operator to save and easily access their favourite recipes. It includes instructions on how to prepare and cook a variety of different meals all in one place. It is a place the  users can create and view their daily menus. The homepage also provides suggestions for sweet or savoury dishes that the user might be interested in, preempting the need for the user to search for an enticing dish. The user also has the option to upload their own recipes for other users to browse. The website offers the user a storage facility for quick access to their favourite recipes.
-Recipe Swap. The live Website can be found [here](https://xxxxxx
-![Mockup](readme_images/mockup.jpg)
+Recipe Swap. The live Website can be found [here](static/images/readme_images/mockup.jpg)
+![Mockup](static/images/readme_images/mockup.jpg)
 ## Table of Contents
 * [User Experience Design (UX)](#User-Experience-Design)
     * [The Strategy Plane](#The-Strategy-Plane)
