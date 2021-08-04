@@ -184,37 +184,18 @@ The logo and 'All Recipes' button will contain a clickable anchor link to allow 
 **Final Wireframes**
 
 Home:<br>
-![Home](readme_images/wireframes/home.JPG)<br>
-404:<br>
-![404](readme_images/wireframes/404.JPG)<br>
-Contact:<br>
-![Contact](readme_images/wireframes/contact.JPG)<br>
-Create Event:<br>
-![Create Event](readme_images/wireframes/create_event.JPG)<br>
-Edit Event:<br>
-![Edit Event](readme_images/wireframes/edit_event.JPG)<br>
-Events:<br>
-![Events](readme_images/wireframes/events.JPG)<br>
-Profile<br>
-![Profile](readme_images/wireframes/profile.JPG)<br>
-Sign In:<br>
-![Sign In](readme_images/wireframes/signin.JPG)<br>
-Sign Up<br>
-![Sign Up](readme_images/wireframes/signup.JPG)<br>
-
-**Original Design Wireframes**
-* [Home](readme_images/wireframes/original/home.pdf)
-* [404](readme_images/wireframes/original/404.pdf)
-* [Contact](readme_images/wireframes/original/contact.pdf)
-* [Create Event](readme_images/wireframes/original/create_event.pdf)
-* [Edit Event](readme_images/wireframes/original/edit_event.pdf)
-* [Events](readme_images/wireframes/original/events.pdf)
-* [Profile](readme_images/wireframes/original/profile.pdf)
-* [Sign In](readme_images/wireframes/original/signin.pdf)
-* [Sign Up](readme_images/wireframes/original/signup.pdf)
+![Home](static/images/wireframes/home.jpg)<br>
+New Recipe:<br>
+![New Recipe](static/images/wireframes/new_recipe.jpg)<br>
+Edit Recipe:<br>
+![Edit Recipe](static/images/wireframes/edit_recipe.jpg)<br>
+Log In:<br>
+![Log In](static/images/wireframes/login.jpg)<br>
+Register<br>
+![Register](static/images/wireframes/register.jpg)<br>
 
 
-#### Database Design
+## Database Design
 MongoDB Object format examples:
 
 **Collection: categories**<br>
@@ -310,28 +291,20 @@ Another feature that will be included in the next release will allow users to se
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
     * JavaScript is used along with [emailjs](https://www.emailjs.com/) for the contact form. This sends an email to the owner
     on form submit.
-    * [jQuery](https://jquery.com/) is used for the following: 
-        * Mobile side nav
-        * Displaying Success/Fail message verifying contact form status.
-        * Collapsible Materialize elements.
-        * Materialize modal.
-        * Datepicker functionality on forms.
-        * To populate downdrops on select elements.
+* [Materialize](https://materializecss.com/)
+    * The Materialize framework was used through the website for layout and responsiveness.
 * [Python](https://www.python.org/)
     * This projects core was created using Python, the back-end logic and the means to run/view the Website.
     * Python Modules used (These can be found in the requirements.txt project file):
-        * dnspython==2.0.0
-        * Flask==1.1.2
+        * click==8.0.1
+        * dnspython==2.1.0
+        * Flask==2.0.1
         * Flask-PyMongo==2.3.0
-        * Flask-WTF==0.14.3
-        * itsdangerous==1.1.0
-        * pymongo==3.11.2
-        * Werkzeug==1.0.1
-        * WTForms==2.3.3
+        * itsdangerous==2.0.1
+        * pymongo==3.11.4
+        * Werkzeug==2.0.1
 * [MongoDB](https://www.mongodb.com/1)
     * MongoDB was used to create the document based databases(collections) used as data storage for this project.
-* [Materialize](https://materializecss.com/)
-    * The Materialize framework was used through the website for layout and responsiveness.
 * [Google Fonts](https://fonts.google.com/)
 	* Google fonts are used throughout the project to import the *Inter* and *Bevan* fonts.
 * [GitHub](https://github.com/)
@@ -340,14 +313,10 @@ Another feature that will be included in the next release will allow users to se
 	* Git is used as version control software to commit and push code to the GitHub repository where the source code is stored.
 * [Heroku](https://dashboard.heroku.com/apps)
     * Heroku was used to deploy the live website.
-* [TinyJPG](https://tinyjpg.com/)
-	* TinyJPG/TinyPNG is used to reduce the file sizes of images before being deployed to reduce storage and bandwith.
 * [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
 	* Google chromes built in developer tools are used to inspect page elements and help debug issues with the site layout and test different CSS styles.
-* [balsamiq Wireframes](https://balsamiq.com/wireframes/)
+* [figma Wireframes](https://www.figma.com/)
 	* This was used to create wireframes for 'The Skeleton Plane' stage of UX design.
-* [Canva](https://www.canva.com/)
-    * Canva design was used in order to create the website logo.
 * [Font Awesome](https://fontawesome.com/)
     * All the Icons displayed throughout the website are Font Awesome icons.
 * [Favicon](https://favicon.io/)
@@ -372,7 +341,8 @@ JavaScript code must pass through the [JSHint Validator](https://jshint.com/).
 
 Python Code must pass through [PEP8 Validator](http://pep8online.com/)
 #### **High Level Test Cases**
-![Test Cases](readme_images/test_cases.JPG)
+![Test Cases 1](static/images/readme_images/ms3_test_results_1.jpg)
+![Test Cases 2](static/images/readme_images/ms3_test_results_2.jpg)
 
 #### **Access Requirements**
 Tester must have access to MongoDB in order to manually verify the insertion 
@@ -384,10 +354,6 @@ tested in production on the live website.
 
 #### **Assumptions and Dependencies**
 Testing is dependent on the website being deployed live on Heroku.
-
-### Test Results
-
-Full test results can be found [here](TESTING.md)
 
 ****
 ## Deployment

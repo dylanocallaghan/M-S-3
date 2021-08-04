@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <!-- Import favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/fav_icons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicons/favicon-16x16.png') }}">
     {% block styles %}
     {% endblock %}
     <title>Recipe Swap</title>
@@ -50,7 +53,7 @@
 
     <section>
         <div class="container">
-            <h2 class="white-text red darken-4 text-darken-4 center-align">The place to store all your Recipes</h2>
+            <h3 class="white-text red darken-4 text-darken-4 center-align">Add your favourite recipes to help create the world's greatest cookbook!</h3>
         </div>
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
