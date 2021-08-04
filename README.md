@@ -285,8 +285,7 @@ Another feature that will be included in the next release will allow users to se
 * [CSS](https://en.wikipedia.org/wiki/CSS)
 	* This project uses custom written CSS to style the Website.
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
-    * JavaScript is used along with [emailjs](https://www.emailjs.com/) for the contact form. This sends an email to the owner
-    on form submit.
+    * JavaScript is used to allow different materialize object to be used such as the nav bar , collapsible and ect.
 * [Materialize](https://materializecss.com/)
     * The Materialize framework was used through the website for layout and responsiveness.
 * [Python](https://www.python.org/)
