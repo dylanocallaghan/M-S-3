@@ -18,7 +18,6 @@ Recipe Swap. The live Website can be found [here](static/images/readme_im
             * [Colour Scheme](#Colour-Scheme)
             * [Typography](#Typography)
             * [Imagery](#Imagery)
-    * [Differences to Design](#Differences-to-Design)
 - [Features](#Features)
     * [Existing Features](#Existing-Features)
     * [Future Features](#Features-Left-to-Implement)
@@ -26,20 +25,17 @@ Recipe Swap. The live Website can be found [here](static/images/readme_im
 * [Testing](#Testing)
     * [Test Strategy](#Test-Strategy)
     * [Test Results](#Test-Results)
-    * [Isses and Resolutions](#Issues-and-Resolutions-to-issues-found-during-testing)
 * [Deployment](#Deployment)
     * [Project Creation](#Project-Creation)
     * [GitHub Pages](#Deployment-To-Heroku)
     * [Run Locally](#Run-Locally)
-    * [Fork Project](#Fork-Project)
 * [Credits](#Credits)
-  * [Content](#Content)
   * [Acknowledgements](#Acknowledgements)
 
 ****
 
 ## User Experience Design
-### **The Strategy Plane**
+### The Strategy Plane
 Recipe Swap provides access to a range of simple, nutritious meals, cooking time is included so that you can choose a recipe based on the time that you have available. Recipe Swap categorises recipes by meal type so you can whip up a yummy main or scrumptious dessert. Find user's personal favourites with tailored dietary restrictions. There is a recipe for every occasion.
 
 Recipe Swap allows the user access a number of recipes with ingredients clearly listed for use as a shopping list when you're trying to fly around the supermarket. This and the method for cooking are all available at the swipe of a finger.
@@ -63,7 +59,7 @@ This website was created for people who like to easily access and reproduce 
 * As a user, I want to be able to search recipes based on custom criteria, for example, if I need to find a vegan meal, etc.
 * As a user, I want to be able to return to the main site without having to use the browser button.
 
-### **The Scope Plane**
+### The Scope Plane
 **Features planned:**
 * Responsive design.
 * Website title and information on the site purpose.
@@ -77,7 +73,7 @@ This website was created for people who like to easily access and reproduce 
 
 ![Importance and Difficulty](static/images/readme_images/importance.jpg)
 
-### **The Structure Plane**
+### The Structure Plane
 
 User Story:
 > As a user, I want the main purpose of the site to be immediately evident when I enter the site so that I understand its aim from the offset.
@@ -340,6 +336,7 @@ CSS Code must pass through the [W3C CSS Validator](https://jigsaw.w3.org/css-val
 JavaScript code must pass through the [JSHint Validator](https://jshint.com/).
 
 Python Code must pass through [PEP8 Validator](http://pep8online.com/)
+### Test Results
 #### **High Level Test Cases**
 ![Test Cases 1](static/images/readme_images/ms3_test_results_1.jpg)
 ![Test Cases 2](static/images/readme_images/ms3_test_results_2.jpg)
@@ -440,5 +437,6 @@ JavaScript Validation function in scripts.js was code from course material for T
 I'd like to give special thanks to the the following people for their help with my project:
 * Helpful slack users who responded to any queries that I had throughout the project e.g. issues implementing the collapsible menu from materialize.
 * My mentor Spencer for reviewing my project and confirming he was happy with my work.
+* Helpful modules on the Code Institute Software Development course where it help me with a bit of the project coding
 
 ****
