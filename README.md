@@ -74,8 +74,11 @@ This website was created for people who like to easily access and reproduce 
 * Logout functionality.
 * Recipes displayed and searchable to all users.
 * Registered user recipe creation and management.
-![Importance and Difficulty](readme_images/importance.jpg)
+
+![Importance and Difficulty](static/images/readme_images/importance.jpg)
+
 ### **The Structure Plane**
+
 User Story:
 > As a user, I want the main purpose of the site to be immediately evident when I enter the site so that I understand its aim from the offset.
 Acceptance Criteria:
