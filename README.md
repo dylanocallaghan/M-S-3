@@ -390,12 +390,12 @@ Full test results can be found [here](TESTING.md)
 ## Deployment
 
 ### Project Creation
-To create this project I used the CI Gitpod Full Template by navigating 
+To create this project I used the CI Gitpod Full Template by going here 
 [here](https://github.com/Code-Institute-Org/gitpod-full-template) and clicking the 'Use this template' button.
 
-I was then directed to the create new repository from template page and entered in my desired repo name, then clicked create repository from template button.
+I was then directed to the 'Create New Repository From Template' page, here I input my desired repo name and clicked the 'Create Repository From Template' button.
 
-Once created, I navigated to my new repository on GitHub and clicked the Gitpod button which built my workspace.
+Once created, I went to my new repository on GitHub and clicked the Gitpod button which built my workspace.
 
 The following commands were used for version control throughout the project:
 
@@ -417,8 +417,8 @@ The following commands were used for version control throughout the project:
 
 **Set up connection to Github Repository:**
 
-1. Click the deploy tab and select GitHub - Connect to GitHub.
-1. A prompt to find a github repository to connect to will then be displayed.
+1. Click the 'Deploy' tab and select GitHub and connect to GitHub.
+1. You are then prompted to find a github repository to connect to.
 1. Enter the repository name for the project and click search.
 1. Once the repo has been found, click the connect button.
 
@@ -435,7 +435,7 @@ Click the settings tab and then click the Reveal Config Vars button and add the 
 
 **Enable automatic deployment:**
 1. Click the Deploy tab
-1. In the Automatic deploys section, choose the branch you want to deploy from then click Enable Automation Deploys.
+1. In the Automatic Deploys section, choose the branch you want to deploy from and then click Enable Automation Deploys.
 
 ### Run Locally
 
@@ -445,8 +445,8 @@ for security purposes.**
 
 1. Navigate to the GitHub [Repository](https://github.com/dylanocallaghan/M-S-3).
 1. Click the Code drop down menu.
-1. Either Download the ZIP file, unpackage locally and open with IDE (This route ends here) OR Copy Git URL from the HTTPS dialogue box.
-1. Open your developement editor of choice and open a terminal window in a directory of your choice.
+1. Here, you can either download the ZIP file, unpackage locally and open with IDE (This route ends here) OR Copy Git URL from the HTTPS dialogue box.
+1. Open your development editor of choice, also open a terminal window in a directory of your choice.
 1. Use the 'git clone' command in terminal followed by the copied git URL.
 1. A clone of the project will be created locally on your machine.
 
@@ -460,7 +460,7 @@ Background image - Taken from (https://money.yahoo.com/best-traditional-irish-fo
 
 ### Code
 
-[Code institute](https://learn.codeinstitute.net/ci_program/diplomainsoftwaredevelopment) - The code used to create the website back-end fuctions was derived from previous projects done in the software development course from Code Institute.
+[Code institute](https://learn.codeinstitute.net/ci_program/diplomainsoftwaredevelopment) - The code used to create the website back-end functions was derived from previous projects created for the Software Development course with The Code Institute.
 
 [Materialize](https://materializecss.com/) - Materialize was used to make the nav bar and header for the website.
 
@@ -469,7 +469,7 @@ JavaScript Validation function in scripts.js was code from course material for T
 ### Acknowledgements
 
 I'd like to give special thanks to the the following people for their help with my project:
-* Helpful lack users who responded to any queries that I had throughout the project and helped resolve errors, e.g. issues implementing the collapsible menu from materialize.
+* Helpful slack users who responded to any queries that I had throughout the project e.g. issues implementing the collapsible menu from materialize.
 * My mentor Spencer for reviewing my project and confirming he was happy with my work.
 
 ****

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
-    <title>CookBook</title>
+    <title>Recipe Swap</title>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
     <header>
         <nav class="nav-extended text-shadow red darken-1 logo">
             <div class="nav-wrapper">
-                <a href="{{ url_for('get_recipes') }}" class="brand-logo">CookBook</a>
+                <a href="{{ url_for('get_recipes') }}" class="brand-logo">Recipe Swap</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
 					<li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
@@ -49,6 +49,9 @@
     </header>
 
     <section>
+        <div class="container">
+            <h2 class="white-text red darken-4 text-darken-4 center-align">The place to store all your Recipes</h2>
+        </div>
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
             {% if messages %}

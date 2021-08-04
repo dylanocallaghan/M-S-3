@@ -1,7 +1,7 @@
 import os
 from flask import (
     Flask, flash, render_template,
-     redirect, request, session, url_for)
+    redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -36,12 +36,12 @@ def search():
 def register():
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
-            {"username" : request.form.get("username").lower()})
-    
+            {"username": request.form.get("username").lower()})
+
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
-        
+
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
@@ -54,7 +54,7 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/login", methods=["GET","POST"])
+@app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
@@ -62,7 +62,7 @@ def login():
 
         if existing_user:
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                    existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(
                             request.form.get("username")))
@@ -118,7 +118,8 @@ def add_recipe():
 
     categories = mongo.db.categories.find()
     times = mongo.db.times.find()
-    return render_template("add_recipe.html", categories=categories, times=times)
+    return render_template(
+            "add_recipe.html", categories=categories, times=times)
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -140,7 +141,9 @@ def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find()
     times = mongo.db.times.find()
-    return render_template("edit_recipe.html", recipe=recipe, categories=categories, times=times)
+    return render_template(
+            "edit_recipe.html", recipe=recipe,
+            categories=categories, times=times)
 
 
 @app.route("/delete_recipe/<recipe_id>")
